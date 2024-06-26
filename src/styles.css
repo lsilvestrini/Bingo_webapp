@@ -38,7 +38,7 @@ body {
 .navigation {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .nav-button {
@@ -79,10 +79,13 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px var(--shadow-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mode-toggle:hover {
-  transform: rotate(15deg);
+  transform: rotate(30deg);
 }
 
 /* Bingo Container */
@@ -130,7 +133,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .draw-button,
@@ -162,7 +165,7 @@ body {
 
 /* Drawn Numbers */
 .drawn-numbers-container {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .drawn-numbers-title {
@@ -194,7 +197,7 @@ body {
 .play-container {
   background-color: var(--card-color);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 10px 20px var(--shadow-color);
 }
 
@@ -264,8 +267,8 @@ body {
 /* New Card Button */
 .new-card-button {
   display: block;
-  margin: 0 auto;
-  padding: 0.8rem 1rem;
+  margin: 1rem auto;
+  padding: 1rem 1rem;
   font-size: 1rem;
   font-weight: 600;
   background-color: var(--secondary-color);
@@ -277,7 +280,7 @@ body {
 }
 
 .new-card-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 4px 6px var(--shadow-color);
 }
 

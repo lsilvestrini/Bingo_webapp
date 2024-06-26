@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Bingo from "./Bingo";
 import Play from "./Play";
+import Gift from "./Gift";
 import "./styles.css";
 
 function App() {
@@ -34,11 +35,21 @@ function App() {
         >
           Sortear
         </button>
+        <button
+          className={`nav-button ${
+            currentPage === "presentear" ? "active" : ""
+          }`}
+          onClick={() => setCurrentPage("presentear")}
+        >
+          Presentear
+        </button>
       </nav>
       {currentPage === "sortear" ? (
         <Bingo key={gameKey} onRestart={restartGame} />
-      ) : (
+      ) : currentPage === "jogar" ? (
         <Play key={gameKey} darkMode={darkMode} />
+      ) : (
+        <Gift />
       )}
     </div>
   );

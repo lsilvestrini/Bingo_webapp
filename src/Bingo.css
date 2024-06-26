@@ -9,16 +9,16 @@
   text-align: center;
   color: var(--primary-color);
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .current-number-container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .current-number-label {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 0.5rem;
 }
 
@@ -26,11 +26,7 @@
   font-size: 4rem;
   font-weight: bold;
   color: var(--accent-color);
-  background: linear-gradient(
-    45deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(45deg, var(--primary-color), var(--luke-color));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -40,7 +36,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .draw-button,
@@ -87,7 +83,7 @@
 }
 
 .drawn-number {
-  background-color: var(--card-color);
+  background-color: var(--text-color);
   color: var(--text-color);
   border: 2px solid var(--primary-color);
   border-radius: 50%;

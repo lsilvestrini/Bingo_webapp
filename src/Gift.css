@@ -1,0 +1,56 @@
+.gift-container {
+  background-color: var(--card-color);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gift-container h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.gift-item {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.copy-pix-button {
+  background-color: var(--secondary-color);
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-pix-button:hover {
+  background-color: var(--luke-color);
+}
+
+.dark-mode .gift-container {
+  background-color: var(--card-color);
+}
+
+.dark-mode .gift-item {
+  background-color: var(--dark-card-color);
+}
+
+.dark-mode .copy-pix-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
