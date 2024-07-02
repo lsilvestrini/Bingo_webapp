@@ -71,7 +71,7 @@ function Bingo() {
           Sortear Número
         </button>
         <button className="restart-button" onClick={saveAndRestart}>
-          Reiniciar Jogo
+          Salvar Jogo
         </button>
       </div>
       {showWinnerInput && (
@@ -82,7 +82,7 @@ function Bingo() {
             id="winnerName"
             value={winnerName}
             onChange={(e) => setWinnerName(e.target.value)}
-            placeholder="❤️"
+            placeholder="❤️ Nome vencedor"
           />
           <button onClick={handleWinnerSave} className="save-button">
             Salvar

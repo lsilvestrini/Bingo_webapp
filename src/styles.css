@@ -8,6 +8,7 @@
   --accent-color: #fd79a8;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --luke-color: #6227acf6;
+  --dark-background-color: #000000;
 }
 
 body {
@@ -32,6 +33,11 @@ body {
   --text-color: #f0f3f8;
   --card-color: #34495e;
   --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode {
+  background-color: var(--dark-background-color);
+  color: var(--text-color);
 }
 
 /* Navigation */
@@ -68,8 +74,8 @@ body {
 /* Mode Toggle */
 .mode-toggle {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 3.8rem;
+  right: 0.5rem;
   background-color: var(--card-color);
   border: none;
   border-radius: 50%;

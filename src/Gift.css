@@ -16,7 +16,8 @@
 
 .gift-item {
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--primary-color);
   align-items: center;
   justify-content: space-between;
   background-color: var(--background-color);
@@ -42,15 +43,35 @@
   background-color: var(--luke-color);
 }
 
+.emoji-size {
+  font-size: 2rem;
+}
+
+.copy-success {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+}
+
 .dark-mode .gift-container {
   background-color: var(--card-color);
+  color: var(--accent-color);
+}
+
+.dark-mode .gift-container h1 {
+  color: white;
 }
 
 .dark-mode .gift-item {
   background-color: var(--dark-card-color);
+  color: whitesmoke;
 }
 
 .dark-mode .copy-pix-button {
   background-color: var(--secondary-color);
   color: white;
+}
+
+.dark-mode .copy-success {
+  color: rgb(61, 167, 61);
 }
