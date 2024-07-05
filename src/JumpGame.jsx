@@ -15,6 +15,7 @@ const JumpGame = () => {
   const [distanceSkated, setDistanceSkated] = useState(0);
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [gifKey, setGifKey] = useState(Date.now()); // State to force re-render of GIF
 
   const gravity = -0.4; // Reduced gravity to make falling slower
   const jumpStrength = 12; // Increased jump strength to make jumping higher
@@ -150,6 +151,7 @@ const JumpGame = () => {
     setObstacles([]);
     setObjectsJumped(0);
     setDistanceSkated(0);
+    setGifKey(Date.now());
   };
 
   return (
@@ -158,10 +160,10 @@ const JumpGame = () => {
         {isGameOver && (
           <div className="game-over-screen">
             <h1>Game Over!</h1>
-            <p>Your score: {objectsJumped}</p>
-            <p>Alcançou: {distanceSkated} meters</p>
+            <p>Pontuação: {objectsJumped}</p>
+            <p>Alcançou: {distanceSkated} metros</p>
             <button className="start-button" onClick={startGame}>
-              Restart
+              Jogar de novo
             </button>
           </div>
         )}
@@ -180,7 +182,13 @@ const JumpGame = () => {
               className="character"
               ref={characterRef}
               style={{ bottom: position + "px" }}
-            ></div>
+            >
+              <img
+                key={gifKey} // Use key to force re-render
+                src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmFmcG9kbm8yejRkdWFocTJpY2owbnB3aDhvdWxpN3hkcm8yMTFsMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/s3HNzM6veBLGdnlQqB/giphy.webp"
+                alt="Character"
+              />
+            </div>
             {obstacles.map((obstacle) => (
               <div
                 key={obstacle.id}
@@ -198,7 +206,7 @@ const JumpGame = () => {
           </>
         )}
         <audio ref={jumpSoundRef} src="./jump_skate.mp3" />
-        <audio ref={gameOverSoundRef} src="./end1.mp3" />
+        <audio ref={gameOverSoundRef} src="./jump_end.mp3" />
       </div>
     </div>
   );
