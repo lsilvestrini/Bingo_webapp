@@ -1,0 +1,34 @@
+.mario-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.mario-game {
+  border: 2px solid #333;
+  position: relative;
+  overflow: hidden;
+  background-color: #87ceeb;
+}
+
+.mario {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+}
+
+.obstacle {
+  background-color: green;
+  position: absolute;
+}
+
+.mario-game-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mario-game-info p {
+  margin: 5px 0;
+}

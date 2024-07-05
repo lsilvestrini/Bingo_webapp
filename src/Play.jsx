@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Play.css";
+import JumpGame from "./JumpGame";
 
-function Play({ darkMode }) {
-  const [card, setCard] = useState([]);
-  const [markedNumbers, setMarkedNumbers] = useState([]);
-  const [hasWon, setHasWon] = useState(false);
-
+function Play({
+  darkMode,
+  card,
+  setCard,
+  markedNumbers,
+  setMarkedNumbers,
+  hasWon,
+  setHasWon,
+  generateCard,
+}) {
   useEffect(() => {
-    generateCard();
+    if (card.length === 0) {
+      generateCard();
+    }
   }, []);
 
   useEffect(() => {
@@ -16,27 +24,8 @@ function Play({ darkMode }) {
     }
   }, [markedNumbers]);
 
-  const generateCard = () => {
-    const newCard = [];
-    for (let i = 0; i < 5; i++) {
-      const column = [];
-      for (let j = 0; j < 5; j++) {
-        let num;
-        do {
-          num = Math.floor(Math.random() * 15) + 1 + i * 15;
-        } while (column.includes(num));
-        column.push(num);
-      }
-      newCard.push(column);
-    }
-    newCard[2][2] = "LUCÃO";
-    setCard(newCard);
-    setMarkedNumbers(["LUCÃO"]);
-    setHasWon(false); // Reset win status on new card generation
-  };
-
   const toggleNumber = (num) => {
-    if (num === "LUCÃO" || hasWon) return; // Prevent marking if game is won
+    if (num === "LUCÃO" || hasWon) return;
     if (markedNumbers.includes(num)) {
       setMarkedNumbers(markedNumbers.filter((n) => n !== num));
     } else {
@@ -109,7 +98,7 @@ function Play({ darkMode }) {
         className="new-card-button"
         title="Gerar nova cartela de bingo"
       >
-        Nova Cartela
+        Gerar Nova Cartela ♻️
       </button>
     </div>
   );

@@ -3,7 +3,9 @@
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 0 10px 20px var(--shadow-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .play-container h1 {
@@ -95,7 +97,9 @@
   font-weight: bold;
   color: var(--primary-color);
   margin-bottom: 1rem;
-  animation: pulse 1s infinite alternate, fadeIn 3s ease-in-out;
+  animation:
+    pulse 1s infinite alternate,
+    fadeIn 3s ease-in-out;
 }
 .win-message p {
   margin: 0;

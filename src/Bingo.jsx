@@ -1,24 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Bingo.css";
 
-function Bingo() {
-  const [numbers, setNumbers] = useState([]);
-  const [drawnNumbers, setDrawnNumbers] = useState([]);
-  const [currentNumber, setCurrentNumber] = useState(null);
-  const [savedGames, setSavedGames] = useState([]);
+function Bingo({
+  numbers,
+  setNumbers,
+  drawnNumbers,
+  setDrawnNumbers,
+  currentNumber,
+  setCurrentNumber,
+  savedGames,
+  setSavedGames,
+  onRestart,
+}) {
   const [winnerName, setWinnerName] = useState("");
   const [showWinnerInput, setShowWinnerInput] = useState(false);
-
-  useEffect(() => {
-    initializeGame();
-  }, []);
-
-  const initializeGame = () => {
-    const initialNumbers = Array.from({ length: 75 }, (_, i) => i + 1);
-    setNumbers(initialNumbers);
-    setDrawnNumbers([]);
-    setCurrentNumber(null);
-  };
 
   const drawNumber = () => {
     if (numbers.length > 0) {
@@ -38,24 +33,17 @@ function Bingo() {
   const handleWinnerSave = () => {
     if (drawnNumbers.length > 0 && winnerName) {
       const now = new Date();
-      const formattedDate = `${now.getDate().toString().padStart(2, "0")}/${(
-        now.getMonth() + 1
-      )
-        .toString()
-        .padStart(2, "0")}/${now.getFullYear()} ${now
-        .getHours()
-        .toString()
-        .padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
-      const gameName = `Jogo ${
-        savedGames.length + 1
-      } - Vencedor: ${winnerName} - ${formattedDate}`;
+      const formattedDate = `${now.getDate().toString().padStart(2, "0")}/${(now.getMonth() + 1).toString().padStart(2, "0")}/${now.getFullYear()} ${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}`;
+      const gameName = `Jogo ${savedGames.length + 1} - Vencedor: ${winnerName} - ${formattedDate}`;
       setSavedGames([
         ...savedGames,
         { name: gameName, numbers: [...drawnNumbers] },
       ]);
       setWinnerName("");
       setShowWinnerInput(false);
-      initializeGame();
+      setDrawnNumbers([]);
+      setCurrentNumber(null);
+      onRestart();
     }
   };
 
